@@ -1,0 +1,37 @@
+/* ===========================
+    資材マップ座標配置
+=========================== */
+
+/* 上段（完全等間隔） */
+#A { top: 20px; left: 40px; }
+#B { top: 20px; left: 120px; }
+#C { top: 20px; left: 220px; }
+#D { top: 20px; left: 290px; }
+#E { top: 20px; left: 390px; }
+#F { top: 20px; left: 460px; }
+#G { top: 20px; left: 560px; }
+#H { top: 20px; left: 630px; }
+#I { top: 20px; left: 730px; }
+
+/* 中央縦棚 */
+#J { top: 120px; left: 40px; }
+#K { top: 120px; left: 130px; }
+#L { top: 120px; left: 300px; }
+#M { top: 120px; left: 470px; }
+#N { top: 120px; left: 640px; }
+
+/* 下段 */
+#O { top: 340px; left: 40px; }
+#P { top: 370px; left: 120px; }
+#Q { top: 370px; left: 220px; }
+#R { top: 280px; left: 730px; }
+
+
+/* 出入口 */
+#exit {
+  position: absolute;
+  top: 320px;
+  left: 460px;
+  font-size: 28px;
+  writing-mode: vertical-rl;
+}

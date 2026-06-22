@@ -1,0 +1,185 @@
+/* ===========================
+    共通レイアウト
+=========================== */
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ✅ タイトル + 検索バーを横並びに中央配置 */
+.header-row {
+  display: flex;
+  justify-content: center; /* 全体を中央に寄せる */
+  align-items: center;
+  gap: 30px;               /* ← ここが「スペース」の部分 */
+  margin-top: 20px;
+}
+
+/* タイトルの余白を消す（縦ズレ防止） */
+.header-row h1 {
+  margin: 0;
+}
+
+/* 検索ボックス */
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+#searchInput {
+  padding: 6px 10px;
+  width: 250px;
+}
+
+/* ✅ map-container の設定 */
+#map-container {
+  width: 900px;
+  height: 430px;
+  border: 2px solid #666;
+  position: relative;
+ 
+  background: white;
+  overflow: hidden; /* ✅ スクロール防止 */
+}
+
+/* 共通棚デザイン */
+.area, .area-vertical, .area-square {
+  position: absolute;
+  border: 1px solid #444;
+  background: #f4f4f4;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  font-size: 20px;
+}
+
+/* 横長棚 */
+.area {
+  width: 80px;
+  height: 50px;
+}
+
+/* 縦長棚 */
+.area-vertical {
+  width: 60px;
+  height: 160px;
+}
+
+/* 正方形棚 */
+.area-square {
+  width: 50px;   /* ← A/B/C の高さと同じにする */
+  height: 50px;  /* なので正方形にする */
+}
+
+
+/* Bの縦バージョン（J 用） */
+.area-B-vertical {
+  position: absolute;
+  width: 50px;   /* ← AB の幅を縦にしたサイズ */
+  height: 80px;  /* ← AB の高さを縦にしたサイズ */
+  border: 1px solid #444;
+  background: #f4f4f4;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+/* ハイライト効果 */
+.highlight {
+  background: #ffe66d !important;
+  outline: 3px solid #d32f2f;
+  outline-offset: -2px;
+  box-shadow: none;
+}
+
+/* ===========================
+   マップ＋詳細の横並びレイアウト
+=========================== */
+
+.main-layout {
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+  max-width: 1400px;
+  margin: 20px auto;
+  padding: 0 24px;
+
+  transform: scale(0.95);        /* ★ 少し縮小 */
+  transform-origin: top center;  /* ★ 上中央基準 */
+}
+
+/* ===========================
+   右側：部品情報詳細パネル
+=========================== */
+
+#detail-panel {
+  width: 420px;
+  height: 410px;          /* map-container と揃える */
+  border: 2px solid #666;
+  background: #fafafa;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+#detail-panel h2 {
+  margin-top: 0;
+  font-size: 18px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+
+#part-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+#part-list li {
+  font-size: 14px;
+  padding: 4px 0;
+  border-bottom: 1px dotted #bbb;
+}
+
+/* ===========================
+   右側詳細：該当部品の強調表示
+=========================== */
+
+.part-hit {
+  background-color: #fff3b0; /* やさしい黄色 */
+  border-left: 4px solid #f57c00;
+  padding-left: 6px;
+}
+
+.part-hit-strong {
+  background-color: #ffe082; /* さらに強調したい場合 */
+  border-left: 4px solid #d32f2f;
+  font-weight: bold;
+}
+
+/* ===========================
+   タブレット横向き対応
+=========================== */
+@media (max-width: 1024px) {
+
+  .main-layout {
+    gap: 12px;               /* 少し詰める */
+  }
+
+  #map-container {
+    width: 65vw;             /* 画面幅の65% */
+    min-width: 600px;        /* 崩れ防止 */
+  }
+
+  #detail-panel {
+    width: 32vw;             /* 右側を確保 */
+    min-width: 320px;
+  }
+
+}

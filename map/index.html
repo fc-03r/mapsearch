@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>資材マップ検索</title>
+
+  <!-- 共通CSS -->
+<link rel="stylesheet" href="css/style.css">
+
+<!-- マップ専用CSS -->
+<link rel="stylesheet" href="css/map_styl.css">
+
+</head>
+
+<body>
+
+<div class="header-row">
+  <h1>資材マップ検索</h1>
+
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="部品名 または 部品番号を入力">
+    <button onclick="highlightArea()">検索</button>
+  </div>
+</div>
+
+<!-- ✅ マップ＋詳細の横並び -->
+<div class="main-layout">
+
+  <!-- 左：マップ -->
+  <div id="map-container">
+
+    <!-- 上段 -->
+    <div class="area-square" id="A">A</div>
+    <div class="area" id="B">B</div>
+    <div class="area-square" id="C">C</div>
+    <div class="area" id="D">D</div>
+    <div class="area-square" id="E">E</div>
+    <div class="area" id="F">F</div>
+    <div class="area-square" id="G">G</div>
+    <div class="area" id="H">H</div>
+    <div class="area-square" id="I">I</div>
+
+    <!-- 中央縦棚 -->
+    <div class="area-vertical" id="J">J</div>
+    <div class="area-vertical" id="K">K</div>
+    <div class="area-vertical" id="L">L</div>
+    <div class="area-vertical" id="M">M</div>
+    <div class="area-vertical" id="N">N</div>
+
+    <!-- 下段 -->
+    <div class="area-B-vertical" id="O">O</div>
+    <div class="area" id="P">P</div>
+    <div class="area" id="Q">Q</div>
+    <div class="area-B-vertical" id="R">R</div>
+
+    
+    <!-- 出入口 -->
+    <div id="exit">出入口</div>
+
+  </div>
+
+  <!-- ✅ 右：部品情報詳細 -->
+  <div id="detail-panel">
+    <h2 id="panel-title">部品情報</h2>
+    <ul id="part-list"></ul>
+  </div>
+
+</div>
+
+<!-- ✅ script.js -->
+<script src="script/script.js"></script>
+
+</body>
+</html>
